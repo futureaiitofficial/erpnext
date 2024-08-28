@@ -1,0 +1,8 @@
+FROM frappe/erpnext-worker:v15
+
+USER root
+COPY install_apps.sh /home/frappe/frappe-bench/
+COPY apps.json /home/frappe/frappe-bench/
+RUN /home/frappe/frappe-bench/install_apps.sh
+
+USER frappe
