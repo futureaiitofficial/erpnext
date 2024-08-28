@@ -1,4 +1,5 @@
-FROM frappe/erpnext-worker:v15
+ARG ERPNEXT_VERSION
+FROM frappe/erpnext-worker:${ERPNEXT_VERSION}
 
 USER root
 COPY install_apps.sh /home/frappe/frappe-bench/
